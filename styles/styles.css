@@ -272,6 +272,19 @@ a {
 /* sections */
 .section {
   display: block;
+  padding-block: var(--spacing-xxl);
+
+  &:has(.alert-banner) {
+    padding-block: 0;
+  }
+
+  &:has(.hero) {
+    padding-block: 0;
+  }
+
+  &.dark:has(.booking-widget) {
+    padding-top: 0;
+  }
 
   > .default-content {
     max-width: var(--grid-container-width);
