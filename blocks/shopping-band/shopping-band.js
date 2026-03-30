@@ -9,9 +9,11 @@ export default function init(el) {
   let rightItem = null;
 
   rows.forEach((row) => {
-    const cells = [...row.querySelectorAll(':scope > div')];
     const link = row.querySelector('a');
-    if (!link) { row.remove(); return; }
+    if (!link) {
+      row.remove();
+      return;
+    }
 
     const li = document.createElement('li');
     const a = link.cloneNode(false);
