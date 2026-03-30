@@ -278,7 +278,7 @@ a {
     margin: 0 auto;
   }
 
-  > .block-content:not(:has(.hero, .booking-widget, .alert-banner)) {
+  > .block-content:not(:has(.hero, .alert-banner)) {
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
