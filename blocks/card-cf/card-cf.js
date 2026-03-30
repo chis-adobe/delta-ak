@@ -63,7 +63,10 @@ export default async function init(el) {
     return;
   }
 
-  const { title, description, discount, image, ctaLabel, ctaLink, bookBefore, disclaimer } = data;
+  const {
+    title, description, discount, image, ctaLabel, ctaLink, bookBefore, disclaimer,
+  } = data;
+  // eslint-disable-next-line no-underscore-dangle
   const baseImageUrl = image._dmS7Url;
 
   // Build card structure (horizontal layout)
