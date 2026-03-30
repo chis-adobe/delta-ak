@@ -11,7 +11,8 @@ header {
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
-  background-color: var(--color-delta-dark);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
 
   ul {
     margin: 0;
@@ -26,7 +27,7 @@ header {
 
   a {
     text-decoration: none;
-    color: var(--color-light);
+    color: var(--color-delta-navy);
   }
 
   .btn {
@@ -137,7 +138,7 @@ header {
         font-weight: 700;
         text-decoration: none;
         margin: 0;
-        color: var(--color-light);
+        color: var(--color-delta-navy);
 
         img {
           height: var(--logo-height);
@@ -175,7 +176,7 @@ header {
     }
 
     > .block-content {
-      border-bottom: 1px solid rgb(255 255 255 / 20%);
+      border-bottom: 1px solid rgb(0 0 0 / 10%);
     }
 
     .action-wrapper {
@@ -202,7 +203,7 @@ header {
     }
 
     .main-nav-item {
-      border-bottom: 1px solid rgb(255 255 255 / 20%);
+      border-bottom: 1px solid rgb(0 0 0 / 10%);
 
       > * {
         max-width: var(--grid-container-width);
@@ -222,7 +223,7 @@ header {
 
     .is-open {
       .main-nav-link {
-        border-bottom: 1px solid rgb(255 255 255 / 20%);
+        border-bottom: 1px solid rgb(0 0 0 / 10%);
       }
 
       .menu,
@@ -243,7 +244,7 @@ header {
     }
 
     .brand-section {
-      border-bottom: 1px solid rgb(255 255 255 / 20%);
+      border-bottom: 1px solid rgb(0 0 0 / 10%);
     }
   }
 }

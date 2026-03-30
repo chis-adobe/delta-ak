@@ -54,6 +54,12 @@ export default function init(el) {
     }
     contentDiv.append(...cell.childNodes);
   }
+  // Insert HR after h3 (red accent line)
+  const h3 = contentDiv.querySelector('h3');
+  if (h3) {
+    const hr = document.createElement('hr');
+    h3.after(hr);
+  }
   inner.append(contentDiv);
 
   // Red chevron CTA
