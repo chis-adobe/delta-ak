@@ -28,4 +28,15 @@ function decorateRows(el, rows) {
 export default function init(el) {
   const rows = [...el.children];
   decorateRows(el, rows);
+
+  // For accent variant, inject chevron icons on CTA links (DA strips icons from links)
+  if (el.classList.contains('accent')) {
+    el.querySelectorAll('.col p:last-child a').forEach((a) => {
+      if (!a.querySelector('.icon-chevron-right')) {
+        const icon = document.createElement('span');
+        icon.className = 'icon icon-chevron-right';
+        a.append(icon);
+      }
+    });
+  }
 }

@@ -26,6 +26,12 @@ export default function init(el) {
   if (hashAware) {
     cta.href = `${cta.getAttribute('href')}${window.location.hash}`;
   }
+  // Inject chevron icon if missing (DA strips icons from links)
+  if (cta && !cta.querySelector('.icon-chevron-right')) {
+    const icon = document.createElement('span');
+    icon.className = 'icon icon-chevron-right';
+    cta.append(icon);
+  }
   ctaPara.classList.add('card-cta-container');
   inner.append(ctaPara);
 }

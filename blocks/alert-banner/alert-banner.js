@@ -10,6 +10,15 @@ export default async function init(el) {
   headline.classList.add('alert-banner-headline');
   if (body) body.classList.add('alert-banner-body');
 
+  // Inject warning icon if missing (DA strips icons from content)
+  const headlinePara = headline.querySelector('p');
+  if (headlinePara && !headlinePara.querySelector('.icon-warning')) {
+    const icon = document.createElement('span');
+    icon.className = 'icon icon-warning';
+    headlinePara.insertBefore(icon, headlinePara.firstChild);
+    headlinePara.insertBefore(document.createTextNode(' '), icon.nextSibling);
+  }
+
   // Add close button
   const closeBtn = document.createElement('button');
   closeBtn.className = 'alert-banner-close';
