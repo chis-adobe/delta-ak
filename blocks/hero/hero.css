@@ -89,8 +89,8 @@
     align-items: center;
     background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 
-    a {
-      color: #fff;
+    h1, h2, h3, h4, h5, h6, a {
+      color: inherit;
     }
 
     p {
