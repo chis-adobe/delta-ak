@@ -11,7 +11,7 @@ header {
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
-  background-color: light-dark(var(--color-light), var(--color-dark));
+  background-color: var(--color-delta-dark);
 
   ul {
     margin: 0;
@@ -26,6 +26,7 @@ header {
 
   a {
     text-decoration: none;
+    color: var(--color-light);
   }
 
   .btn {
@@ -136,7 +137,7 @@ header {
         font-weight: 700;
         text-decoration: none;
         margin: 0;
-        color: var(--color-brand);
+        color: var(--color-light);
 
         img {
           height: var(--logo-height);
@@ -174,7 +175,7 @@ header {
     }
 
     > .block-content {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
     }
 
     .action-wrapper {
@@ -201,7 +202,7 @@ header {
     }
 
     .main-nav-item {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
 
       > * {
         max-width: var(--grid-container-width);
@@ -221,7 +222,7 @@ header {
 
     .is-open {
       .main-nav-link {
-        border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+        border-bottom: 1px solid rgb(255 255 255 / 20%);
       }
 
       .menu,
@@ -242,7 +243,7 @@ header {
     }
 
     .brand-section {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
     }
   }
 }
@@ -260,7 +261,7 @@ header {
 
     .menu,
     .mega-menu {
-      background-color: var(--color-shaded);
+      background-color: var(--color-delta-navy);
       padding: var(--spacing-xl) 0;
       position: absolute;
       left: 0;
@@ -271,7 +272,7 @@ header {
         max-width: initial;
         margin: 0;
         width: 180px;
-        background-color: var(--color-shaded);
+        background-color: var(--color-delta-navy);
         padding: var(--spacing-xl);
         position: absolute;
         left: auto;

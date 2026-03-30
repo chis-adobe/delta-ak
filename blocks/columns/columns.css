@@ -77,6 +77,26 @@
       align-items: start;
     }
   }
+
+  &.accent {
+    .col h2 {
+      padding-bottom: var(--spacing-s);
+      border-bottom: 3px solid var(--color-delta-red);
+      display: inline-block;
+      margin-bottom: var(--spacing-m);
+    }
+
+    .col a {
+      color: var(--color-delta-red);
+      font-weight: 600;
+    }
+
+    .col a .icon {
+      width: 14px;
+      height: 14px;
+      vertical-align: middle;
+    }
+  }
 }
 
 @media (width >= 900px) {
