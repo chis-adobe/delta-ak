@@ -1,12 +1,12 @@
 export default function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
 
-  // Flatten: collect image and content from rows
   const inner = document.createElement('div');
   inner.className = 'card-inner';
 
   let pic = null;
-  let contentCells = [];
+  const contentCells = [];
+  let linkUrl = null;
 
   for (const row of rows) {
     const cells = [...row.querySelectorAll(':scope > div')];
@@ -15,7 +15,14 @@ export default function init(el) {
       if (picture && !pic && cell.children.length === 1) {
         pic = picture;
       } else {
-        contentCells.push(cell);
+        // Check if this cell is just a link URL
+        const links = cell.querySelectorAll('a');
+        const text = cell.textContent.trim();
+        if (links.length === 1 && links[0].textContent.trim() === text) {
+          linkUrl = links[0].href;
+        } else {
+          contentCells.push(cell);
+        }
       }
     }
     row.remove();
@@ -33,24 +40,34 @@ export default function init(el) {
   const contentDiv = document.createElement('div');
   contentDiv.className = 'card-content-container';
   for (const cell of contentCells) {
+    // Remove any CTA paragraph (last p with a link)
+    const paras = [...cell.querySelectorAll('p')];
+    for (const p of paras) {
+      const a = p.querySelector('a');
+      if (a && p.children.length <= 2) {
+        const pText = p.textContent.trim();
+        if (a.textContent.trim() === pText || pText.endsWith(a.textContent.trim())) {
+          if (!linkUrl) linkUrl = a.href;
+          p.remove();
+        }
+      }
+    }
     contentDiv.append(...cell.childNodes);
   }
   inner.append(contentDiv);
 
-  // Extract CTA as separate container
-  const lastP = contentDiv.querySelector('p:last-of-type');
-  if (lastP) {
-    const cta = lastP.querySelector('a');
-    if (cta) {
-      // Inject chevron icon if missing (DA strips icons from links)
-      if (!cta.querySelector('.icon-chevron-right')) {
-        const icon = document.createElement('span');
-        icon.className = 'icon icon-chevron-right';
-        cta.append(icon);
-      }
-      lastP.classList.add('card-cta-container');
-      inner.append(lastP);
-    }
+  // Red chevron CTA
+  if (linkUrl) {
+    const ctaP = document.createElement('p');
+    ctaP.className = 'card-cta-container';
+    const a = document.createElement('a');
+    a.href = linkUrl;
+    a.setAttribute('aria-label', 'Learn more');
+    const icon = document.createElement('span');
+    icon.className = 'icon icon-chevron-right';
+    a.append(icon);
+    ctaP.append(a);
+    inner.append(ctaP);
   }
 
   el.append(inner);

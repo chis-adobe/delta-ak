@@ -286,9 +286,28 @@ a {
     padding-top: 0;
   }
 
+  &:has(.shopping-band) {
+    padding-block: 0;
+  }
+
   > .default-content {
     max-width: var(--grid-container-width);
     margin: 0 auto;
+    text-align: center;
+
+    p strong {
+      font-size: var(--body-font-size-s);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-delta-navy);
+    }
+
+    p:not(:has(strong)) {
+      font-size: var(--heading-font-size-xl);
+      line-height: var(--heading-line-height);
+      color: var(--color-delta-navy);
+      font-weight: 500;
+    }
   }
 
   > .block-content:not(:has(.hero, .alert-banner)) {

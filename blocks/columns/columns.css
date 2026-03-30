@@ -1,8 +1,9 @@
 .columns {
-  --columns-gap: 0;
+  --columns-gap: var(--spacing-l);
 
   display: grid;
   gap: var(--columns-gap);
+  margin-block: var(--spacing-xl);
 
   img {
     display: block;
