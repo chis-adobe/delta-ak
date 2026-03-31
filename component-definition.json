@@ -15,16 +15,15 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/text/v1/text",
-                "template": {}
-              }
+              "name": "text",
+              "type": "text"
             }
           }
         },
         {
           "title": "Title",
           "id": "title",
+          "model": "title",
           "plugins": {
             "xwalk": {
               "page": {
@@ -35,18 +34,15 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/title/v1/title",
-                "template": {
-                  "model": "title"
-                }
-              }
+              "name": "title",
+              "type": "text"
             }
           }
         },
         {
           "title": "Image",
           "id": "image",
+          "model": "image",
           "plugins": {
             "xwalk": {
               "page": {
@@ -55,16 +51,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/image/v1/image",
-                "template": {}
-              }
+              "name": "image",
+              "type": "image",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "img[alt]"
+                }
+              ]
             }
           }
         },
         {
           "title": "Button",
           "id": "button",
+          "model": "button",
           "plugins": {
             "xwalk": {
               "page": {
@@ -75,12 +80,8 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/button/v1/button",
-                "template": {
-                  "model": "button"
-                }
-              }
+              "name": "button",
+              "type": "text"
             }
           }
         }
@@ -93,6 +94,8 @@
         {
           "title": "Section",
           "id": "section",
+          "model": "section",
+          "filter": "section",
           "plugins": {
             "xwalk": {
               "page": {
@@ -103,12 +106,7 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "section"
-                }
-              }
+              "unsafeHTML": "<div></div>"
             }
           }
         }
@@ -121,6 +119,7 @@
         {
           "title": "Accordion",
           "id": "accordion",
+          "filter": "accordion",
           "plugins": {
             "xwalk": {
               "page": {
@@ -132,19 +131,16 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Accordion",
-                  "filter": "accordion"
-                }
-              }
+              "name": "accordion",
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Accordion Item",
           "id": "accordion-item",
+          "model": "accordion-item",
           "plugins": {
             "xwalk": {
               "page": {
@@ -158,21 +154,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Accordion Item",
-                  "model": "accordion-item",
-                  "summary": "Lorem Ipsum",
-                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "summary",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Cards",
           "id": "cards",
+          "filter": "cards",
           "plugins": {
             "xwalk": {
               "page": {
@@ -184,19 +184,16 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Cards",
-                  "filter": "cards"
-                }
-              }
+              "name": "cards",
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Card",
           "id": "card",
+          "model": "card",
           "plugins": {
             "xwalk": {
               "page": {
@@ -208,19 +205,29 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Card",
-                  "model": "card"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Carousel",
           "id": "carousel",
+          "filter": "carousel",
           "plugins": {
             "xwalk": {
               "page": {
@@ -233,20 +240,15 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Carousel",
-                  "model": "carousel",
-                  "filter": "carousel"
-                }
-              }
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Carousel Slide",
           "id": "carousel-item",
+          "model": "carousel-item",
           "plugins": {
             "xwalk": {
               "page": {
@@ -258,19 +260,30 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Carousel Slide",
-                  "model": "carousel-item"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "media_image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "media_imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "content_text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Columns",
           "id": "columns",
+          "model": "columns",
+          "filter": "columns",
           "plugins": {
             "xwalk": {
               "page": {
@@ -282,19 +295,17 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "columns": "2",
-                  "rows": "1"
-                }
-              }
+              "name": "columns",
+              "rows": 1,
+              "columns": 2,
+              "behaviour": "columns"
             }
           }
         },
         {
           "title": "Embed",
           "id": "embed",
+          "model": "embed",
           "plugins": {
             "xwalk": {
               "page": {
@@ -307,20 +318,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Embed",
-                  "model": "embed",
-                  "filter": "embed"
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "embed_uri",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "embed_placeholderAlt",
+                  "selector": "div>div>p>a"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Fragment",
           "id": "fragment",
+          "model": "fragment",
           "plugins": {
             "xwalk": {
               "page": {
@@ -332,19 +348,20 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Fragment",
-                  "model": "fragment"
+              "unsafeHTML": "<div class=\"fragment\"><div><div><p><a href=\"\">Fragment URL</a></p></div></div></div>",
+              "fields": [
+                {
+                  "name": "reference",
+                  "selector": "div>div>p>a[href]"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Hero",
           "id": "hero",
+          "model": "hero",
           "plugins": {
             "xwalk": {
               "page": {
@@ -356,19 +373,28 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Hero",
-                  "model": "hero"
+              "unsafeHTML": "<div class=\"hero\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\" src=\"\" alt=\"\"></picture><h1></h1></div></div></div>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div>div>h1"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Modal",
           "id": "modal",
+          "model": "modal",
           "plugins": {
             "xwalk": {
               "page": {
@@ -380,19 +406,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Modal",
-                  "model": "modal"
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "link",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "linkText",
+                  "selector": "div>div>p>a"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Quote",
           "id": "quote",
+          "model": "quote",
           "plugins": {
             "xwalk": {
               "page": {
@@ -404,19 +436,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Quote",
-                  "model": "quote"
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "quotation",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "attribution",
+                  "selector": "div:nth-child(2)>div"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Search",
           "id": "search",
+          "model": "search",
           "plugins": {
             "xwalk": {
               "page": {
@@ -429,20 +467,22 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Search",
-                  "model": "search",
-                  "filter": "search"
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "index",
+                  "selector": "div>div>p>a[href]"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Table",
           "id": "table",
+          "model": "table",
+          "filter": "table",
           "plugins": {
             "xwalk": {
               "page": {
@@ -455,20 +495,22 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Table",
-                  "model": "table",
-                  "filter": "table"
+              "name": "table",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "table",
+                  "selector": "div>div"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Row",
           "id": "table-row",
+          "model": "table-row",
           "plugins": {
             "xwalk": {
               "page": {
@@ -481,20 +523,21 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Row",
-                  "model": "table-row",
-                  "column1text": "Column1"
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "column1text",
+                  "selector": "div>div"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Row",
           "id": "table-col-2",
+          "model": "table-col-2",
           "plugins": {
             "xwalk": {
               "page": {
@@ -508,21 +551,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Row",
-                  "model": "table-col-2",
-                  "column1text": "Column1",
-                  "column2text": "Column2"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "column1text",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "column2text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Row",
           "id": "table-col-3",
+          "model": "table-col-3",
           "plugins": {
             "xwalk": {
               "page": {
@@ -537,22 +584,29 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Row",
-                  "model": "table-col-3",
-                  "column1text": "Column1",
-                  "column2text": "Column2",
-                  "column3text": "Column3"
+              "rows": 1,
+              "columns": 3,
+              "fields": [
+                {
+                  "name": "column1text",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "column2text",
+                  "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "column3text",
+                  "selector": "div:nth-child(3)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Row",
           "id": "table-col-4",
+          "model": "table-col-4",
           "plugins": {
             "xwalk": {
               "page": {
@@ -568,23 +622,33 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Row",
-                  "model": "table-col-4",
-                  "column1text": "Column1",
-                  "column2text": "Column2",
-                  "column3text": "Column3",
-                  "column4text": "Column4"
+              "rows": 1,
+              "columns": 4,
+              "fields": [
+                {
+                  "name": "column1text",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "column2text",
+                  "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "column3text",
+                  "selector": "div:nth-child(3)"
+                },
+                {
+                  "name": "column4text",
+                  "selector": "div:nth-child(4)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Tabs",
           "id": "tabs",
+          "filter": "tabs",
           "plugins": {
             "xwalk": {
               "page": {
@@ -596,19 +660,15 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Tabs",
-                  "filter": "tabs"
-                }
-              }
+              "columns": 1,
+              "rows": 2
             }
           }
         },
         {
           "title": "Tabs Item",
           "id": "tabs-item",
+          "model": "tabs-item",
           "plugins": {
             "xwalk": {
               "page": {
@@ -622,21 +682,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Tab",
-                  "model": "tabs-item",
-                  "tabName": "Tab Name",
-                  "content": "<p>Lorem Ipsum</p>"
+              "columns": 0,
+              "rows": 2,
+              "fields": [
+                {
+                  "name": "tabName",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "content",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Video",
           "id": "video",
+          "model": "video",
           "plugins": {
             "xwalk": {
               "page": {
@@ -649,20 +713,22 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Video",
-                  "model": "video",
-                  "filter": "video"
+              "name": "video",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "uri",
+                  "selector": "div>div>p>a[href]"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Alert Banner",
           "id": "alert-banner",
+          "model": "alert-banner",
           "plugins": {
             "xwalk": {
               "page": {
@@ -674,13 +740,18 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Alert Banner",
-                  "model": "alert-banner"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "headline",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "body",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
@@ -697,18 +768,16 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Booking Widget"
-                }
-              }
+              "name": "booking-widget",
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Card CF",
           "id": "card-cf",
+          "model": "card-cf",
           "plugins": {
             "xwalk": {
               "page": {
@@ -720,19 +789,21 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Card CF",
-                  "model": "card-cf"
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "reference",
+                  "selector": "div>div>p>a[href]"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Cards Vertical",
           "id": "cards-vertical",
+          "filter": "cards-vertical",
           "plugins": {
             "xwalk": {
               "page": {
@@ -744,19 +815,16 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Cards Vertical",
-                  "filter": "cards-vertical"
-                }
-              }
+              "name": "cards-vertical",
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Cards Vertical Item",
           "id": "cards-vertical-item",
+          "model": "cards-vertical-item",
           "plugins": {
             "xwalk": {
               "page": {
@@ -768,19 +836,25 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Cards Vertical Item",
-                  "model": "cards-vertical-item"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
         {
           "title": "Shopping Band",
           "id": "shopping-band",
+          "filter": "shopping-band",
           "plugins": {
             "xwalk": {
               "page": {
@@ -792,19 +866,16 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Shopping Band",
-                  "filter": "shopping-band"
-                }
-              }
+              "name": "shopping-band",
+              "rows": 0,
+              "columns": 0
             }
           }
         },
         {
           "title": "Shopping Band Item",
           "id": "shopping-band-item",
+          "model": "shopping-band-item",
           "plugins": {
             "xwalk": {
               "page": {
@@ -816,13 +887,18 @@
               }
             },
             "da": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Shopping Band Item",
-                  "model": "shopping-band-item"
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "label",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "link",
+                  "selector": "div:nth-child(2)>p>a[href]"
                 }
-              }
+              ]
             }
           }
         }
