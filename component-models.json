@@ -20,12 +20,20 @@
     "id": "section",
     "fields": [
       {
-        "component": "select",
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
         "name": "style",
         "label": "Style",
         "options": [
-          { "name": "Default", "value": "" },
-          { "name": "Dark", "value": "dark" }
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
         ]
       }
     ]
@@ -35,12 +43,14 @@
     "fields": [
       {
         "component": "reference",
+        "valueType": "string",
         "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "imageAlt",
         "label": "Alt Text"
       }
@@ -51,6 +61,7 @@
     "fields": [
       {
         "component": "text",
+        "valueType": "string",
         "name": "title",
         "label": "Title"
       },
@@ -73,23 +84,24 @@
     "id": "button",
     "fields": [
       {
-        "component": "text",
-        "name": "label",
-        "label": "Label"
-      },
-      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
       },
       {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
         "component": "select",
-        "name": "type",
+        "name": "linkType",
         "label": "Type",
         "options": [
-          { "name": "Primary", "value": "" },
-          { "name": "Secondary", "value": "secondary" },
-          { "name": "Accent", "value": "accent" }
+          { "name": "default", "value": "" },
+          { "name": "primary", "value": "primary" },
+          { "name": "secondary", "value": "secondary" },
+          { "name": "accent", "value": "accent" }
         ]
       }
     ]
@@ -99,13 +111,24 @@
     "fields": [
       {
         "component": "reference",
+        "valueType": "string",
         "name": "image",
-        "label": "Background Image"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt Text"
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
@@ -114,23 +137,17 @@
     "fields": [
       {
         "component": "reference",
+        "valueType": "string",
         "name": "image",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
-        "label": "Content"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "CTA Link"
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
@@ -139,7 +156,7 @@
     "fields": [
       {
         "component": "aem-content",
-        "name": "cfPath",
+        "name": "reference",
         "label": "Content Fragment Path"
       }
     ]
@@ -149,23 +166,17 @@
     "fields": [
       {
         "component": "reference",
+        "valueType": "string",
         "name": "image",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
-        "label": "Content"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "CTA Link"
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
@@ -175,12 +186,16 @@
       {
         "component": "richtext",
         "name": "headline",
-        "label": "Headline"
+        "value": "",
+        "label": "Headline",
+        "valueType": "string"
       },
       {
         "component": "richtext",
         "name": "body",
-        "label": "Body Text"
+        "value": "",
+        "label": "Body Text",
+        "valueType": "string"
       }
     ]
   },
@@ -189,6 +204,7 @@
     "fields": [
       {
         "component": "text",
+        "valueType": "string",
         "name": "label",
         "label": "Label"
       },
