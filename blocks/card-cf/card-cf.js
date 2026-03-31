@@ -1,4 +1,5 @@
 const GQL_BASE = 'https://publish-p130746-e1275972.adobeaemcloud.com/graphql/execute.json/securbank/TravelOfferByPath;path=';
+const TS = new Date().toISOString().split('T')[0];
 
 const SMART_CROPS = [
   { name: 'Small', width: 400 },
@@ -28,7 +29,7 @@ function updateImageSrc(img, baseUrl) {
   if (!container) return;
   const w = container.offsetWidth * window.devicePixelRatio;
   const crop = bestCrop(w);
-  img.src = `${baseUrl}:${crop.name}`;
+  img.src = `${baseUrl}:${crop.name}?ts=${TS}`;
 }
 
 export default async function init(el) {
@@ -79,7 +80,7 @@ export default async function init(el) {
   const img = document.createElement('img');
   img.alt = title;
   img.loading = 'lazy';
-  img.src = `${baseImageUrl}:Large`;
+  img.src = `${baseImageUrl}:Large?ts=${TS}`;
   picDiv.append(img);
   inner.append(picDiv);
 
