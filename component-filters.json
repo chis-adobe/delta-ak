@@ -1,0 +1,47 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "card",
+      "card-horizontal",
+      "card-cf",
+      "cards-vertical",
+      "alert-banner",
+      "booking-widget",
+      "shopping-band",
+      "columns",
+      "fragment"
+    ]
+  },
+  {
+    "id": "card",
+    "components": [
+      "text",
+      "image",
+      "button"
+    ]
+  },
+  {
+    "id": "cards-vertical",
+    "components": [
+      "cards-vertical-item"
+    ]
+  },
+  {
+    "id": "shopping-band",
+    "components": [
+      "shopping-band-item"
+    ]
+  }
+]
