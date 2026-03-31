@@ -88,14 +88,6 @@
     ]
   },
   {
-    "id": "embed",
-    "components": []
-  },
-  {
-    "id": "search",
-    "components": []
-  },
-  {
     "id": "video",
     "components": []
   },
